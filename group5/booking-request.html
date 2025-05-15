@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html{
+      font-family: "Poppins",sans-serif;
+    }
+    body{
+      background-color: rgb(240, 240, 240);
+      margin:0;
+      padding:0;
+    }
+    .wrapper{
+      padding:1rem 4rem;
+    }
+    .active{
+      font-weight: bolder;
+    }
+    .hero{
+      background-color: black;
+      padding:7rem 2rem 1rem;
+      border-radius:1rem;
+    }
+    header{
+      background-color:white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      border-radius:1rem;
+      position: fixed;
+      top:2rem;
+      left: 6rem;
+      right:6rem;
+      z-index: 100;
+    }
+    .logo{
+      text-decoration: none;
+      color:black;
+    }
+    header>nav>ul{
+      list-style:none;
+      display: inline-block;
+    }
+    header>nav>ul>li{
+      margin-left:2rem;
+      display: inline-block;
+    }
+    header>nav>ul>li>a{
+      text-decoration: none;
+      color: black;
+    }
+    .logout{
+      background-color: black;
+      color:white;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      height:2rem;
+      width:4rem;
+      border-radius:0.5rem;
+      margin-left: 5rem;
+    }
+    .bookings {
+  width: 100%;
+  height:40vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-top: 60px;
+  border-radius: 1rem;
+  margin:1rem auto;
+}
+footer{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+}
+.footer-subnavigation ul{
+  list-style: none;
+}
+.footer-subnavigation ul li{
+  display: inline-block;
+}
+</style>
+</head>
+<body>
+    <div class="wrapper">
+      <section class="hero">
+      <header>
+        <a href="ManagerDashboard.html" class="logo">KUMBI CONNECT</a>
+    <nav>
+        <ul>
+            <li><a href="ManagerDashboard.php">Home</a></li>
+            <li><a href="BookingRequest.html" class="active">Booking requests</a></li>
+            <li><a href="" class="logout">Log Out</a></li>
+        </ul>
+    </nav>  
+    </header>
+<div id="" class="bookings"></div>
+<div id="" class="bookings"></div>
+<div id="" class="bookings"></div>
+<div id="" class="bookings"></div>
+<div id="" class="bookings"></div>
+<div id="" class="bookings"></div>
+</section>
+<footer>
+    <nav class="footer-subnavigation">
+   <ul>
+     <li>
+       <a href="#">Group 5 Software</a>
+     </li>
+     <li>
+       <a href="#"> Help </a>
+     </li>
+     <li>
+       <a href="#"> Licenses </a>
+     </li>
+   </ul>
+ </nav>
+ <div class="copyright">
+   2024, made with by
+   <a href="#">Group 5 Software</a>
+ </div>
+ <div>
+   Distributed by
+   <a target="_blank" href="">Group 5 Software</a>.
+ </div>
+</footer>
+</div>
+<script></script>
+</body>
+</html>
