@@ -3,258 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  <style>
-        html{
-      font-family: "Poppins",sans-serif;
-    }
-    body{
-      background-color: rgb(240, 240, 240);
-      margin:0;
-      padding:0;
-    }
-    .wrapper{
-      padding:1rem 4rem;
-    }
-    .active{
-      font-weight: bolder;
-    }
-    .hero{
-      height:100vh;
-      background-image:url(picha/IMG-20240904-WA0076.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      backdrop-filter:blur(80px);
-      padding:1rem 2rem 1rem;
-      border-radius:1rem;
-    }
-    header{
-      background-color:white;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-      border-radius:1rem;
-      z-index: 100;
-    }
-    .logo{
-      text-decoration: none;
-      color:black;
-      font-weight: bold;
-    }
-    header>nav>ul{
-      list-style:none;
-      display: inline-block;
-    }
-    header>nav>ul>li{
-      margin-left:2rem;
-      display: inline-block;
-    }
-    header>nav>ul>li>button{
-      text-decoration: none;
-      color: black;
-      background-color: inherit;
-      border: none;
-      outline: none;
-    }
-    .signup{
-      background-color: black;
-      color:white;
-      display:flex;
-      align-items: center;
-      justify-content: center;
-      height:2rem;
-      width:4rem;
-      border-radius:0.5rem;
-      transition-property:color,background-color;
-      transition-duration:0.5s;
-    }
-    .signup:hover{
-      background-color:rgba(255, 166, 0, 0.8);
-      color:rgb(0, 0, 0);
-    }
-    .hero-title{
-      text-align: center;
-      font-size:5rem;
-      color: white;
-      margin-top:6rem;
-    }
-    .coloredText{
-      background-color: orange;
-      color: #000;
-      padding:0.5rem 0.8rem;
-      border-radius: 0.3rem;
-      font-family:'Times New Roman', Times, serif;
-    }
-    .hero-subtitle{
-      text-align: center;
-      font-size: 2rem;
-      color: white;
-    }
-    .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 10000; 
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
-  padding-top: 60px;
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto;
-  border: 1px solid #888;
-  width: 80%; 
-  height:120px;
-  border-radius: 0.5rem;
-}
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-  }
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-.container{
-  display: flex;
-  justify-content: center;
-  gap:1rem;
-}
-.container a{
-   text-decoration:none;
-   color: black;
-}
-.container a:hover{
-   text-decoration: underline;
-}
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-    footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-   }
-   .footer-subnavigation ul{
-     list-style: none;
-  
-   }
-   .footer-subnavigation ul li{
-     display: inline-block;
-     
-   }
-  </style>
-</head>
-<body>
-    <div class="wrapper">
-    <section class="hero">
-    <header>
-        <a href="" class="logo">KUMBI CONNECT</a>
-        <nav class="navbar">
-            <ul>
-            <li>     
-              <button class="booking-status " onclick="document.getElementById('login').style.display='block'">Log in</button>
-            </li>
-            <li>
-                <button class="booking-status signup" onclick="document.getElementById('sign-up').style.display='block'">Register</button>    
-            </li>
-            </ul>
-        </nav>
-    </header>
-        <div id="login" class="modal">
-            <div class="modal-content animate">
-              <div class="imgcontainer">
-                <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <h2>Login as?</h2>
-              </div>
-             
-              <div class="container">
-               <a href="ManagerLogin.php">Manager</a>
-               <a href="customerLogin.php">Customer</a>
-              </div>
-            </div>
-          </div>
-          <div id="sign-up" class="modal">
-            <div class="modal-content animate">
-                <div class="imgcontainer">
-                  <span onclick="document.getElementById('sign-up').style.display='none'" class="close" title="Close Modal">&times;</span>
-                  <h2>Register as?</h2>
-                </div>
-               
-                <div class="container">
-                 <a href="ManagerRegistration.php">Manager</a>
-                 <a href="CustomerRegistration.php">Customer</a>
-                </div>
-              </div>
-          </div>
-    <h1 class="hero-title">Find The <span class="coloredText">Hall</span> <br>That Suits You <img src="" alt=""></h1>
-    <p class="hero-subtitle">We are hall booking agency that will help<br>you to find smart and affordable hall in a<br>short period of time.</p>
-        </section>
-<footer>
-       <nav class="footer-subnavigation">
-      <ul>
-        <li>
-          <a href="#">Group 5 Software</a>
-        </li>
-        <li>
-          <a href="#"> Help </a>
-        </li>
-        <li>
-          <a href="#"> Licenses </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="copyright">
-      2024, made with by
-      <a href="#">Group 5 Software</a>
-    </div>
-    <div>
-      Distributed by
-      <a target="_blank" href="">Group 5 Software</a>.
-    </div>
-</footer>
-    </div>
+    <title>Kumbi Connect - Find Your Perfect Event Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
-          var modal = document.getElementById('id01');
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            500: 'rgba(255, 166, 0, 0.8)',
+                            600: '#ff8c00',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-zoom {
+                animation: animatezoom 0.6s;
+            }
+            @keyframes animatezoom {
+                from { transform: scale(0); }
+                to { transform: scale(1); }
+            }
+            .bg-blur {
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-poppins m-0 p-0">
+    <!-- Navigation & Hero Section -->
+    <div class="wrapper px-4 md:px-16 py-4">
+        <!-- Hero Section -->
+        <section class="hero min-h-screen bg-cover bg-center bg-no-repeat rounded-xl relative" style="background-image: url('picha/IMG-20240904-WA0076.jpg');">
+            <!-- Overlay for better text readability -->
+            <div class="absolute inset-0 bg-black bg-opacity-40 rounded-xl"></div>
+            
+            <!-- Header -->
+            <header class="bg-white flex flex-col md:flex-row justify-between items-center p-4 md:p-6 rounded-xl z-10 relative">
+                <a href="" class="logo font-bold text-black no-underline text-xl flex items-center">
+                    <i class="fas fa-building mr-2 text-primary-500"></i> KUMBI CONNECT
+                </a>
+                <nav class="navbar mt-4 md:mt-0">
+                    <ul class="flex space-x-2 md:space-x-8 list-none p-0 m-0 items-center">
+                        <li>
+                            <a href="#features" class="text-black hover:text-primary-600 transition-colors duration-300 hidden md:inline-block">Features</a>
+                        </li>
+                        <li>
+                            <a href="#how-it-works" class="text-black hover:text-primary-600 transition-colors duration-300 hidden md:inline-block">How It Works</a>
+                        </li>
+                        <li>     
+                            <button class="booking-status bg-transparent border-none outline-none text-black hover:text-primary-600 transition-colors duration-300" 
+                                    onclick="document.getElementById('login').style.display='block'">Log in</button>
+                        </li>
+                        <li>
+                            <button class="signup bg-black text-white flex items-center justify-center h-10 w-24 rounded-lg transition-colors duration-500 hover:bg-primary-500 hover:text-black"
+                                    onclick="document.getElementById('sign-up').style.display='block'">Register</button>    
+                        </li>
+                        <li class="md:hidden">
+                            <button id="mobile-menu-button" class="text-black focus:outline-none">
+                                <i class="fas fa-bars text-xl"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white rounded-lg mt-2 p-4 absolute top-24 right-4 left-4 z-20 shadow-lg">
+                <ul class="space-y-3">
+                    <li><a href="#features" class="block text-black hover:text-primary-600">Features</a></li>
+                    <li><a href="#how-it-works" class="block text-black hover:text-primary-600">How It Works</a></li>
+                    <li><a href="#testimonials" class="block text-black hover:text-primary-600">Testimonials</a></li>
+                    <li><a href="#contact" class="block text-black hover:text-primary-600">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="text-center mt-24 md:mt-32 relative z-10 px-4">
+                <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold mb-4">
+                    Find The <span class="coloredText bg-primary-500 text-black px-3 py-2 rounded-md font-serif">Perfect Hall</span> <br class="hidden sm:block">
+                    For Your Special Event
+                </h1>
+                <p class="hero-subtitle text-xl sm:text-2xl text-white mt-6 max-w-3xl mx-auto">
+                    Discover and book the ideal venue for weddings, conferences, and celebrations. Our platform makes finding affordable halls quick and effortless.
+                </p>
+                
+                <!-- Search Form -->
+                <div class="mt-12 max-w-4xl mx-auto bg-white bg-opacity-90 rounded-xl p-6 shadow-lg">
+                    <form class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="col-span-1 md:col-span-2">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 text-left">Location</label>
+                            <div class="relative">
+                                <input type="text" placeholder="City or venue name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                <i class="fas fa-map-marker-alt absolute right-3 top-3.5 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2 text-left">Date</label>
+                            <div class="relative">
+                                <input type="date" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                <i class="fas fa-calendar-alt absolute right-3 top-3.5 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2 text-left">Guests</label>
+                            <div class="relative">
+                                <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 appearance-none">
+                                    <option>50-100</option>
+                                    <option>100-200</option>
+                                    <option>200-500</option>
+                                    <option>500+</option>
+                                </select>
+                                <i class="fas fa-users absolute right-3 top-3.5 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4">
+                            <button type="submit" class="w-full bg-primary-500 hover:bg-primary-600 text-black font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Search Halls <i class="fas fa-search ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Kumbi Connect</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="text-primary-500 text-4xl mb-4">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Quick Booking</h3>
+                        <p class="text-gray-600">Find and book your perfect hall in minutes with our intuitive platform and instant confirmation.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="text-primary-500 text-4xl mb-4">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Affordable Prices</h3>
+                        <p class="text-gray-600">We negotiate the best rates with venues so you get quality spaces at competitive prices.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="text-primary-500 text-4xl mb-4">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+                        <p class="text-gray-600">Our dedicated team is available round the clock to assist with any queries or changes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-16 bg-gray-50 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">How It Works</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="bg-primary-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                        <h3 class="text-xl font-bold mb-3">Search Venues</h3>
+                        <p class="text-gray-600">Filter by location, capacity, amenities, and budget to find halls that match your needs.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="bg-primary-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                        <h3 class="text-xl font-bold mb-3">Compare Options</h3>
+                        <p class="text-gray-600">View photos, read reviews, and check availability for your preferred dates.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="bg-primary-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                        <h3 class="text-xl font-bold mb-3">Book & Confirm</h3>
+                        <p class="text-gray-600">Secure your booking with our easy payment system and receive instant confirmation.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#" class="inline-block bg-primary-500 hover:bg-primary-600 text-black font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Get Started Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Venues Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Popular Venues</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Venue 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Grand Ballroom</h3>
+                                <span class="bg-primary-100 text-primary-800 text-sm font-medium px-2.5 py-0.5 rounded">Premium</span>
+                            </div>
+                            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-primary-500 mr-2"></i> Nairobi, Kenya</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-lg">$1,200</span>
+                                    <span class="text-gray-600 text-sm"> / day</span>
+                                </div>
+                                <button class="text-primary-500 hover:text-primary-600 font-medium">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Venue 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Garden Pavilion</h3>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">Outdoor</span>
+                            </div>
+                            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-primary-500 mr-2"></i> Mombasa, Kenya</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-lg">$850</span>
+                                    <span class="text-gray-600 text-sm"> / day</span>
+                                </div>
+                                <button class="text-primary-500 hover:text-primary-600 font-medium">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Venue 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');"></div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Conference Center</h3>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Business</span>
+                            </div>
+                            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-primary-500 mr-2"></i> Kisumu, Kenya</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-lg">$950</span>
+                                    <span class="text-gray-600 text-sm"> / day</span>
+                                </div>
+                                <button class="text-primary-500 hover:text-primary-600 font-medium">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#" class="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        View All Venues <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 bg-gray-50 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K." class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Sarah K.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Booking our wedding venue through Kumbi Connect was effortless! We found the perfect hall within our budget and the customer support was exceptional."</p>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="James M." class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">James M.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"As an event planner, I rely on Kumbi Connect to source venues quickly. The variety of options and transparent pricing saves me hours of work."</p>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Amina J." class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Amina J.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Found a beautiful conference center for our annual meeting. The booking process was smooth and the venue exceeded our expectations."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-primary-500 text-black px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Perfect Venue?</h2>
+                <p class="text-xl mb-8">Join thousands of satisfied customers who found their ideal event space through Kumbi Connect.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Browse Venues <i class="fas fa-search ml-2"></i>
+                    </a>
+                    <a href="#" class="bg-white hover:bg-gray-100 text-black font-bold py-3 px-6 rounded-lg transition duration-300">
+                        List Your Venue <i class="fas fa-plus ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact Us</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
+                        <p class="text-gray-600 mb-6">Have questions or need assistance? Our team is here to help you find the perfect venue for your event.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-primary-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Address</h4>
+                                    <p class="text-gray-600">123 Venue Street, Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-primary-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Phone</h4>
+                                    <p class="text-gray-600">+254 700 123 456</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-primary-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="text-gray-600">info@kumbiconnect.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-600 hover:text-primary-500 text-xl"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-primary-500 text-xl"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-primary-500 text-xl"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-primary-500 text-xl"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <form class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                                <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                                <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Subject</label>
+                                <input type="text" id="subject" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                                <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary-500 hover:bg-primary-600 text-black font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Send Message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Modal -->
+        <div id="login" class="modal hidden fixed z-[10000] left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-40 pt-16">
+            <div class="modal-content animate-zoom bg-white border border-gray-300 rounded-lg mx-auto my-8 p-6 w-11/12 sm:w-4/5 md:w-3/5 lg:w-2/5">
+                <div class="imgcontainer text-center my-6 relative">
+                    <span onclick="document.getElementById('login').style.display='none'" 
+                          class="close absolute right-6 top-0 text-black text-3xl font-bold hover:text-red-500 cursor-pointer">&times;</span>
+                    <h2 class="text-2xl font-bold">Login as?</h2>
+                </div>
+                <div class="container flex justify-center gap-4">
+                    <a href="ManagerLogin.php" class="no-underline text-black hover:underline">Manager</a>
+                    <a href="customerLogin.php" class="no-underline text-black hover:underline">Customer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sign Up Modal -->
+        <div id="sign-up" class="modal hidden fixed z-[10000] left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-40 pt-16">
+            <div class="modal-content animate-zoom bg-white border border-gray-300 rounded-lg mx-auto my-8 p-6 w-11/12 sm:w-4/5 md:w-3/5 lg:w-2/5">
+                <div class="imgcontainer text-center my-6 relative">
+                    <span onclick="document.getElementById('sign-up').style.display='none'" 
+                          class="close absolute right-6 top-0 text-black text-3xl font-bold hover:text-red-500 cursor-pointer">&times;</span>
+                    <h2 class="text-2xl font-bold">Register as?</h2>
+                </div>
+                <div class="container flex justify-center gap-4">
+                    <a href="ManagerRegistration.php" class="no-underline text-black hover:underline">Manager</a>
+                    <a href="CustomerRegistration.php" class="no-underline text-black hover:underline">Customer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white py-12 px-4">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-building mr-2 text-primary-500"></i> KUMBI CONNECT
+                    </h3>
+                    <p class="text-gray-400">Your trusted partner for finding and booking the perfect event venues across Kenya.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">Home</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-primary-500 transition duration-300">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-primary-500 transition duration-300">How It Works</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-primary-500 transition duration-300">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">Terms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">Privacy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">Cookies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2024 Kumbi Connect. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary-500 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
